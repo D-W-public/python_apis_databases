@@ -12,3 +12,14 @@ Print out:
 
 
 '''
+
+import requests
+from pprint import pprint
+
+url = "http://demo.codingnomads.co:8080/tasks_api/users"
+
+response = requests.get(url)
+
+print(response.status_code)
+print(response.encoding)
+pprint(response.json())
