@@ -8,3 +8,5 @@ CHALLENGE: Also fetch the number of their friends and display the ratio
 between followers and friends in an interesting way.
 
 '''
+import tweepy
+import os

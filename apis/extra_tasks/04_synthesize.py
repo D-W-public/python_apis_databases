@@ -9,3 +9,24 @@ Using the Chuck Norris API in combination with the datamuse API
 * Synthesize the collected results into an avant-garde poem and post on the forum ;)
 
 '''
+import requests
+from pprint import pprint
+
+def lastWord(string):
+  index = string.rfind(" ")
+  return string[index+1:-1]
+
+url_1 = "https://api.chucknorris.io/jokes/random"
+url_2 = "https://api.datamuse.com/words?rel_rhy="
+
+response = requests.get(url_1)
+
+data = response.json()
+
+print(data["value"])
+
+passed_word = lastWord(data["value"])
+
+response = requests.get(url_2+passed_word)
+
+pprint(response.json())

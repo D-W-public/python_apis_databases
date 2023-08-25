@@ -11,3 +11,16 @@ BONUS: Using your script, create a folder and download the main 'front_default'
        Name the files appropriately using the name data from your response.
 
 '''
+
+import requests
+from pprint import pprint
+
+url = "https://pokeapi.co/docs/v2#pokemon"
+
+response = requests.get(url)
+
+data = response.json()
+
+pokedex = data[0]
+
+print(pokedex)
